@@ -1,0 +1,15 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+.app {
+  font-size: 1.25em;
+  font-family: "Roboto", sans-serif; // background-color: #e8e8e8;
+  h1 {
+    font-family: "Roboto" sans-serif;
+  }
+  img {
+    // @TODO figure out how to style the first child
+    &.logo {
+      height: 80px;
+      width: auto;
+    }
+  }
+}

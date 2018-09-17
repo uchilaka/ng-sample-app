@@ -1,0 +1,8 @@
+<div class="app">
+  <h3>Airline Passengers</h3>
+  <ul class="passenger-li">
+    <li *ngFor="let passenger of passengers; let i = index" class="passenger">
+      {{ i }} : {{ passenger.fullname }}
+    </li>
+  </ul>
+</div>

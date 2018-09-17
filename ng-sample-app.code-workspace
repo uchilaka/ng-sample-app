@@ -1,0 +1,12 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "eslint.enable": false,
+    "tslint.autoFixOnSave": true,
+    "typescript.preferences.quoteStyle": "single"
+  }
+}
