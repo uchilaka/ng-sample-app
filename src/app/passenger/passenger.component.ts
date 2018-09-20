@@ -1,10 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-interface Passenger {
-  id: number;
-  fullname: string;
-  checkedIn: boolean;
-}
+import { Passenger } from './passenger.interface';
 
 @Component({
   selector: 'app-passenger',
@@ -16,19 +11,26 @@ export class PassengerComponent implements OnInit {
     {
       id: 1,
       fullname: 'Stephen',
-      checkedIn: true
+      checkedIn: true,
+      checkInDate: new Date().getTime(),
+      children: null
     },
     {
       id: 2,
       fullname: 'Rose',
-      checkedIn: false
+      checkedIn: false,
+      children: null
     },
     {
       id: 3,
       fullname: 'James',
-      checkedIn: true
+      checkedIn: true,
+      checkInDate: new Date().getTime(),
+      children: null
     }
   ];
+
+  map_o = '../../assets/map-o.svg';
 
   constructor() {}
 

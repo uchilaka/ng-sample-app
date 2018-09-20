@@ -1,8 +1,11 @@
 <div class="app">
+  <app-svg-test></app-svg-test>
+  <hr />
   <h3>Airline Passengers</h3>
-  <ul class="passenger-li">
+  <ul class="passengers">
     <li *ngFor="let passenger of passengers; let i = index" class="passenger">
-      {{ i }} : {{ passenger.fullname }}
+      <!-- @NOTE Input binding is square braces; Event binding is parenthesis -->
+      <app-passenger-detail [item]="passenger"></app-passenger-detail>
     </li>
   </ul>
 </div>

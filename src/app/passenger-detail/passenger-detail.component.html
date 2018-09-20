@@ -1,0 +1,13 @@
+<div>
+  <img [src]="statusDefaultImg" [ngClass]="{ 'status': true, 'checked-in': item.checkedIn, 'not-checked-in': !item.checkedIn }" />
+  <!-- <span [ngClass]="{ 'status': true, 'checked-in': item.checkedIn, 'not-checked-in': !item.checkedIn }">&nbsp;</span> -->
+  {{ item.fullname }}
+  <p>{{ item | json }}</p>
+  <div class="date">
+    Check in date: {{ item.checkInDate | date: 'yMMMMd' }}
+  </div>
+  <div class="children">
+    <!-- Using safe navigation operator -->
+    {{ item.children?.length }}
+  </div>
+</div>

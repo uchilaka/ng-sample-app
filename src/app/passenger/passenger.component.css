@@ -1,9 +1,7 @@
-.passenger-li {
-  visibility: visible;
+ul.passengers {
   list-style-type: none;
-  padding: 0;
 }
 
-.passenger-li .passenger {
+ul.passengers .passenger {
   padding: 0.25em 0;
 }

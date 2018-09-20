@@ -12,4 +12,15 @@
       width: auto;
     }
   }
+  .status {
+    display: block;
+    width: 10px;
+    height: 10px;
+    &.checked-in {
+      background-color: green;
+    }
+    margin: 8px 10px 0 0;
+    float: left;
+    border-radius: 50%;
+  }
 }

@@ -1,0 +1,18 @@
+img.status {
+  /** This re-sizes the images, from their original 30px x 30px **/
+  width: 15px;
+  height: 15px;
+  /** Custom syntax to fix the alignment of the bullet points **/
+  margin-left: -30px;
+  margin-right: 15px;
+}
+
+img.status.checked-in {
+  background: url(../../assets/status.png) 0px 0px;
+  background-size: auto 15px;
+}
+
+img.status:not(.checked-in), img.status.not-checked-in {
+  background: url(../../assets/status.png) 45px 0px;
+  background-size: auto 15px;
+}
