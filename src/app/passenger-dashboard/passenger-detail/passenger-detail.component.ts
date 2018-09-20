@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Passenger } from '../passenger/passenger.interface';
+import { Passenger } from '../models/passenger.interface';
 
 @Component({
   selector: 'app-passenger-detail',

@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Passenger } from './passenger.interface';
+import { Passenger } from '../../models/passenger.interface';
 
 @Component({
-  selector: 'app-passenger',
-  templateUrl: './passenger.component.html',
-  styleUrls: ['./passenger.component.css']
+  selector: 'app-passenger-dashboard',
+  templateUrl: './passenger-dashboard.component.html',
+  styleUrls: ['./passenger-dashboard.component.css']
 })
-export class PassengerComponent implements OnInit {
+export class PassengerDashboardComponent implements OnInit {
   passengers: Passenger[] = [
     {
       id: 1,
@@ -31,8 +31,6 @@ export class PassengerComponent implements OnInit {
   ];
 
   map_o = '../../assets/map-o.svg';
-
-  constructor() {}
 
   ngOnInit() {}
 }

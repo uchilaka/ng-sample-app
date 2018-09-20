@@ -23,7 +23,7 @@ import { Component } from '@angular/core';
       <!-- Demo: Template Ref -->
       <button (click)="handleClickWithRef(username.value)">Change name (via ref)</button>
       <!-- Passenger view -->
-      <app-passenger></app-passenger>
+      <app-passenger-dashboard></app-passenger-dashboard>
     </div>
   `
 })

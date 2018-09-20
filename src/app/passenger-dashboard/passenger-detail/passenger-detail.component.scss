@@ -9,12 +9,12 @@ img {
     &.checked-in {
       // Co-ordinates for sprites MUST take into account
       // the new dimensions for the image coordinates
-      background: url(../../assets/status.png) 0px 0px;
+      background: url(../../../assets/status.png) 0px 0px;
       background-size: auto 15px;
     }
     &:not(.checked-in),
     &.not-checked-in {
-      background: url(../../assets/status.png) 45px 0px;
+      background: url(../../../assets/status.png) 45px 0px;
       background-size: auto 15px;
     }
   }

@@ -8,12 +8,12 @@ img.status {
 }
 
 img.status.checked-in {
-  background: url(../../assets/status.png) 0px 0px;
+  background: url(../../../assets/status.png) 0px 0px;
   background-size: auto 15px;
 }
 
 img.status:not(.checked-in), img.status.not-checked-in {
-  background: url(../../assets/status.png) 45px 0px;
+  background: url(../../../assets/status.png) 45px 0px;
   background-size: auto 15px;
 }
 
