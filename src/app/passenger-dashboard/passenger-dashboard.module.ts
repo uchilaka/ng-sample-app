@@ -3,10 +3,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 // Rando other component(s)
-import { SvgTestComponent } from './svg-test/svg-test.component';
+import { SvgTestComponent } from './components/svg-test/svg-test.component';
 
 import { PassengerDashboardComponent } from './containers/passenger-dashboard/passenger-dashboard.component';
-import { PassengerDetailComponent } from './passenger-detail/passenger-detail.component';
+import { PassengerDetailComponent } from './components/passenger-detail/passenger-detail.component';
 
 @NgModule({
   imports: [CommonModule],

@@ -9,14 +9,14 @@ import { AppComponent } from './app.component';
 
 // import { PassengerComponent } from './passenger/passenger.component';
 // import { PassengerDetailComponent } from './passenger-detail/passenger-detail.component';
-import { PipeEgComponent } from './pipe-eg/pipe-eg.component';
+// import { PipeEgComponent } from './passenger-dashboard/components/pipe-eg/pipe-eg.component';
 // import { SvgTestComponent } from './svg-test/svg-test.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
     // PassengerComponent,
-    PipeEgComponent
+    // PipeEgComponent
     // PassengerDetailComponent,
     // SvgTestComponent
   ],

@@ -9,7 +9,7 @@ import { Passenger } from '../../models/passenger.interface';
 export class PassengerDashboardComponent implements OnInit {
   passengers: Passenger[];
 
-  map_o = '../../assets/map-o.svg';
+  map_o = '../../../../assets/map-o.svg';
 
   ngOnInit() {
     this.passengers = [

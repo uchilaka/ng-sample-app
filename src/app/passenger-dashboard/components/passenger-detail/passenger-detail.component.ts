@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Passenger } from '../models/passenger.interface';
+import { Passenger } from '../../models/passenger.interface';
 
 @Component({
   selector: 'app-passenger-detail',
@@ -10,7 +10,7 @@ export class PassengerDetailComponent implements OnInit {
   @Input()
   item: Passenger;
   editing = false;
-  statusDefaultImg = '../../assets/status-filler.png';
+  statusDefaultImg = '../../../../assets/status-filler.png';
 
   constructor() {}
 
