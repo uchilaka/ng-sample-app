@@ -10,8 +10,15 @@
   <span [ngClass]="{ 'status-with-ng-style': true, 'status': true, 'checked-in': item.checkedIn, 'not-checked-in': !item.checkedIn }"
     [ngStyle]="{ 'backgroundColor': (item.checkedIn ? 'green' : 'red')}">&nbsp;</span>
 
-  {{ item.fullname }}
+  <div *ngIf="editing">
+    <input #name (input)="onNameChange(name.value)" type="text" [value]="item.fullname" />
+  </div>
+  <div *ngIf="!editing">
+    {{ item.fullname }}
+  </div>
+  <!-- pipe for data "handling" -->
   <p>{{ item | json }}</p>
+  <!-- Using pipe for data transformation -->
   <div class="date">
     Check in date: {{ item.checkInDate | date: 'yMMMMd' }}
   </div>
@@ -19,4 +26,6 @@
     <!-- Using safe navigation operator -->
     {{ item.children?.length }}
   </div>
+  <button (click)="toggleEdit()">{{ editing ? 'Done' : 'Edit' }}</button>
+  <!-- <button (click)="onRemove()">Remove</button> -->
 </div>
