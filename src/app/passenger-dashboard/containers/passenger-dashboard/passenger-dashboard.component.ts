@@ -7,30 +7,32 @@ import { Passenger } from '../../models/passenger.interface';
   styleUrls: ['./passenger-dashboard.component.css']
 })
 export class PassengerDashboardComponent implements OnInit {
-  passengers: Passenger[] = [
-    {
-      id: 1,
-      fullname: 'Stephen',
-      checkedIn: true,
-      checkInDate: new Date().getTime(),
-      children: null
-    },
-    {
-      id: 2,
-      fullname: 'Rose',
-      checkedIn: false,
-      children: null
-    },
-    {
-      id: 3,
-      fullname: 'James',
-      checkedIn: true,
-      checkInDate: new Date().getTime(),
-      children: null
-    }
-  ];
+  passengers: Passenger[];
 
   map_o = '../../assets/map-o.svg';
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.passengers = [
+      {
+        id: 1,
+        fullname: 'Stephen',
+        checkedIn: true,
+        checkInDate: new Date().getTime(),
+        children: null
+      },
+      {
+        id: 2,
+        fullname: 'Rose',
+        checkedIn: false,
+        children: null
+      },
+      {
+        id: 3,
+        fullname: 'James',
+        checkedIn: true,
+        checkInDate: new Date().getTime(),
+        children: null
+      }
+    ];
+  }
 }
