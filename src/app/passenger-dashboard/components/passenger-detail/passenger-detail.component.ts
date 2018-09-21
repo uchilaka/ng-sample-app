@@ -1,4 +1,11 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnChanges,
+  Input,
+  Output,
+  EventEmitter
+} from '@angular/core';
 import { Passenger } from '../../models/passenger.interface';
 
 @Component({
@@ -7,7 +14,7 @@ import { Passenger } from '../../models/passenger.interface';
   templateUrl: './passenger-detail.component.html',
   styleUrls: ['./passenger-detail.component.css']
 })
-export class PassengerDetailComponent implements OnInit {
+export class PassengerDetailComponent implements OnInit, OnChanges {
   @Input()
   item: Passenger;
 
@@ -22,7 +29,17 @@ export class PassengerDetailComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log('ngOnInit');
+  }
+  // @IMPORTANT breaks (intentionally) the binding between data and a one-way bound output
+  ngOnChanges(changes) {
+    console.log(changes);
+    if (changes.item) {
+      this.item = Object.assign({}, changes.item.currentValue);
+    }
+    console.log('ngOnChanges');
+  }
 
   onNameChange(value: string) {
     // console.log(`onNameChange: ${value}`);

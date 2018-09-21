@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Passenger } from '../../models/passenger.interface';
+import { PassengerDashboardService } from '../../passenger-dashboard.service';
 
 @Component({
   selector: 'app-passenger-dashboard',
@@ -7,6 +8,10 @@ import { Passenger } from '../../models/passenger.interface';
     <div class="app">
       <app-svg-test></app-svg-test>
       <h3>Airline Passengers</h3>
+      <!-- @NOTE illustrating ngOnChanges -->
+      <div *ngFor="let passenger of passengers;">
+        {{ passenger.fullname }}
+      </div>
       <ul class="passengers">
         <li *ngFor="let passenger of passengers; let i = index" class="passenger">
           <!-- @NOTE Input binding is square braces; Event binding is parenthesis -->
@@ -25,29 +30,10 @@ export class PassengerDashboardComponent implements OnInit {
 
   map_o = '../../../../assets/map-o.svg';
 
+  constructor(private passengerService: PassengerDashboardService) {}
+
   ngOnInit() {
-    this.passengers = [
-      {
-        id: 1,
-        fullname: 'Stephen',
-        checkedIn: true,
-        checkInDate: new Date().getTime(),
-        children: null
-      },
-      {
-        id: 2,
-        fullname: 'Rose',
-        checkedIn: false,
-        children: null
-      },
-      {
-        id: 3,
-        fullname: 'James',
-        checkedIn: true,
-        checkInDate: new Date().getTime(),
-        children: null
-      }
-    ];
+    this.passengers = this.passengerService.getPassengers();
   }
 
   handleRemove(ev: Passenger) {
@@ -60,7 +46,7 @@ export class PassengerDashboardComponent implements OnInit {
     this.passengers = this.passengers.map((passenger: Passenger) => {
       if (passenger.id === ev.id) {
         // Merge direction <-
-        passenger = Object.assign({}, passenger, event);
+        passenger = Object.assign({}, passenger, ev);
       }
       return passenger;
     });

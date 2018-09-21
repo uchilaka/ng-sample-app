@@ -1,0 +1,31 @@
+{
+  "api": {
+    "passengers": [
+      {
+        "id": 1,
+        "fullname": "Stephen",
+        "checkedIn": true,
+        "checkInDate": 1537553821799,
+        "children": null
+      },
+      {
+        "id": 2,
+        "fullname": "Rose",
+        "checkedIn": false,
+        "children": [
+          {
+            "name": "Tom Magnus",
+            "age": 18
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "fullname": "James",
+        "checkedIn": true,
+        "checkInDate": 1537553790347,
+        "children": null
+      }
+    ]
+  }
+}
