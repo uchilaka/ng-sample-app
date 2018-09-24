@@ -33,7 +33,10 @@ export class PassengerDashboardComponent implements OnInit {
   constructor(private passengerService: PassengerDashboardService) {}
 
   ngOnInit() {
-    this.passengers = this.passengerService.getPassengers();
+    this.passengerService.getPassengers().subscribe((data: Passenger[]) => {
+      console.log('Data', data);
+      this.passengers = data;
+    });
   }
 
   handleRemove(ev: Passenger) {
@@ -43,13 +46,15 @@ export class PassengerDashboardComponent implements OnInit {
   }
 
   handleEdit(ev: Passenger) {
-    this.passengers = this.passengers.map((passenger: Passenger) => {
-      if (passenger.id === ev.id) {
-        // Merge direction <-
-        passenger = Object.assign({}, passenger, ev);
-      }
-      return passenger;
+    this.passengerService.updatePassenger(ev).subscribe((data: Passenger) => {
+      this.passengers = this.passengers.map((passenger: Passenger) => {
+        if (passenger.id === ev.id) {
+          // Merge direction <-
+          passenger = Object.assign({}, passenger, ev);
+        }
+        return passenger;
+      });
+      // console.log(this.passengers);
     });
-    console.log(this.passengers);
   }
 }
